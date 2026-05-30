@@ -10,7 +10,7 @@ import  startRankTrackingCron from "./cron/rankTrackingCron.js";
 connectDB()
 const app = express()
 
-app.use(cors())
+app.use(cors({"https://seo-rank-tracker-cyan.vercel.app/"}))
 app.use(express.json())
 
 app.get('/',(req,res)=> res.send("Server is running"))
@@ -19,7 +19,7 @@ app.use("/api/rank",rankRouter)
 app.use("/api/analysis", analysisRouter)
 
 // Start cron jobs
-startRankTrackingCron
+startRankTrackingCron()
 
 const PORT = process.env.PORT || 5000;
 
