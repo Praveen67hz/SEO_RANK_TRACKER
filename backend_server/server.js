@@ -10,8 +10,13 @@ import  startRankTrackingCron from "./cron/rankTrackingCron.js";
 connectDB()
 const app = express()
 
-app.use(cors())
-app.use(express.json())
+app.use(cors({
+    origin: [
+        'http://localhost:5173',
+        'https://seo-rank-tracker-cyan.vercel.app'  // Your FRONTEND URL
+    ],
+    credentials: true
+}));app.use(express.json())
 
 app.get('/',(req,res)=> res.send("Server is running"))
 app.use("/api/auth", authRouter)
