@@ -10,7 +10,7 @@ import  startRankTrackingCron from "./cron/rankTrackingCron.js";
 connectDB()
 const app = express()
 
-app.use(cors({"https://seo-rank-tracker-cyan.vercel.app/"}))
+app.use(cors({"https://seo-rank-tracker-cyan.vercel.app"}))
 app.use(express.json())
 
 app.get('/',(req,res)=> res.send("Server is running"))
