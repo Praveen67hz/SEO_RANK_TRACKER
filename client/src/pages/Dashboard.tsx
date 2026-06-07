@@ -107,10 +107,10 @@ export default function Dashboard() {
                         <div className="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center text-accent">
                             <BarChart3Icon size={22} />
                         </div>
-                        <div>
-                            <p className="text-2xl font-bold text-foreground">{user?.plan === "free" ? `${5 - (user?.analysisCount || 0)}` : "∞"}</p>
-                            <p className="text-xs text-muted-foreground">Scans Left Today</p>
-                        </div>
+                       <div>
+                        <p className="text-2xl font-bold text-foreground">∞</p>
+                        <p className="text-xs text-muted-foreground">Unlimited Scans</p>
+                    </div>
                     </div>
                 </div>
 
