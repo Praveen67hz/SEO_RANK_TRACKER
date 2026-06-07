@@ -26,13 +26,13 @@ export async function scrapeUrl(url) {
     // Get current host for link detection
     const currentHost = new URL(url).hostname;
     
-    // Helper function to get meta content (same as YouTuber)
+    // Helper function to get meta content 
     const getMeta = (name) => {
       const meta = $(`meta[name="${name}"], meta[property="${name}"]`).first();
       return meta.attr('content') || '';
     };
     
-    // Extract all SEO data (EXACT same structure as YouTuber)
+    // Extract all SEO data
     const scrapedData = {
       metaData: {
         title: $('title').text().trim() || '',
@@ -74,7 +74,7 @@ export async function scrapeUrl(url) {
       bodyText: '',
     };
     
-    // Process links (same logic as YouTuber)
+    // Process links
     const allLinks = $('a[href]');
     let internalLinks = 0;
     let externalLinks = 0;
